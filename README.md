@@ -22,3 +22,4 @@ To include Woke as an analyzer:
 Uninclusive language detection will now be shown on your Sonatype Lift dashboard and pull requests.
 
 <img width="1340" alt="Screen Shot 2022-06-23 at 4 02 16 PM" src="https://user-images.githubusercontent.com/12902323/175387193-49d89734-d669-4671-9414-e26d6843efc2.png">
+<img width="1021" alt="Screen Shot 2022-06-23 at 4 15 07 PM" src="https://user-images.githubusercontent.com/12902323/175391444-4ed655eb-c3c8-441f-b2e5-eb2659c1e356.png">
