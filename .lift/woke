@@ -32,7 +32,7 @@ function run() {
             \"message\": \"${result[3]}\", \
             \"file\": \"${result[0]}\", \
             \"line\": ${result[1]}, \
-            \"details_url\": \"null\" \
+            \"details_url\": \"https://docs.getwoke.tech\" \
           }"
     done
     echo "]"
