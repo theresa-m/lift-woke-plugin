@@ -3,32 +3,51 @@
 commit=$2
 cmd=$3 
 
-# TODO
+IFS=':' # string delimiter
+
 function version() {
     echo 1
 }
 
-# TODO
+# always applicable
 function applicable() {
     echo "true"
 }
 
-# TODO
 function run() {
-    echo "[{ \"type\": \"Hello World\", \
-            \"message\": \"We are analyzing commit $commit\", \
-            \"file\": \"N/A\", \
-            \"line\": 0, \
-            \"details_url\": \"https://help.sonatype.com/lift/extending-lift\" \
-          }]"
+    installTool
+
+    firstResult=1
+
+    echo "["
+    woke --output simple | while read -ra result ; do
+	if [ $firstResult -eq 1 ]
+        then
+	    firstResult=0
+	else
+            echo ","
+	fi
+
+        echo "{ \"type\": \"Woke\", \
+            \"message\": \"${result[3]}\", \
+            \"file\": \"${result[0]}\", \
+            \"line\": ${result[1]}, \
+            \"details_url\": \"null\" \
+          }"
+    done
+    echo "]"
+}
+
+function installTool() {
+    curl -sSfL https://git.io/getwoke | bash -s -- -b .
 }
 
 if [[ "$cmd" = "run" ]] ; then 
-  run 
+    run 
 fi 
 if [[ "$cmd" = "applicable" ]] ; then 
-  applicable 
+    applicable 
 fi 
 if [[ "$cmd" = "version" ]] ; then 
-  version 
+    version 
 fi
