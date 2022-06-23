@@ -20,7 +20,7 @@ function run() {
     firstResult=1
 
     echo "["
-    woke --output simple | while read -ra result ; do
+    ./woke --output simple | while read -ra result ; do
 	if [ $firstResult -eq 1 ]
         then
 	    firstResult=0
@@ -38,8 +38,9 @@ function run() {
     echo "]"
 }
 
+# Add result of output to install-output.txt
 function installTool() {
-    curl -sSfL https://git.io/getwoke | bash -s -- -b .
+    curl -sSfL https://git.io/getwoke | bash -s -- -b . &> install-output.txt
 }
 
 if [[ "$cmd" = "run" ]] ; then 
