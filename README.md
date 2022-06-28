@@ -13,7 +13,7 @@ Detection rules for Woke can be [customized](https://docs.getwoke.tech/rules/).
 To include Woke as an analyzer:
 1. Make sure Sonatype Lift is configured on your public GitHub project: https://github.com/apps/sonatype-lift
 2. Add [.lift/woke](https://github.com/theresa-m/lift-woke-plugin/blob/main/.lift/woke) to your project
-3. Add the following line to `.lift.toml` in your root directory:
+3. Add the following line to `.lift/config.toml` in your root directory:
 
 `customTools = [ ".lift/woke" ]`
 
